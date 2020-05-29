@@ -39,7 +39,7 @@ namespace HairSalon.Controllers
       return View("Details", thisClient);
     }
 
-    public ActionResult Update (int id)
+    public ActionResult Update(int id)
     {
       var thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
       return View("Update", thisClient);
@@ -53,14 +53,14 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult Delete (int id)
+    public ActionResult Delete(int id)
     {
       var thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
     }
 
     [HttpPost, ActionName("Delete")]
-    public ActionResult DeleteConfirmed (int id)
+    public ActionResult DeleteConfirmed(int id)
     {
       var thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
       _db.Client.Remove(thisClient);
