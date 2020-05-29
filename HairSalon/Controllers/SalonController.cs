@@ -41,10 +41,38 @@ namespace HairSalon.Controllers
       Salon thisSalon = _db.Salon.FirstOrDefault(salon => salon.SalonId == id);
       return View("Details", thisSalon);
     }
+
+    public ActionResult Update(int id)
+    {
+      var thisSalon = _db.Salon.FirstOrDefault(salon => salon.SalonId == id);
+      ViewBag.ClientId = new SelectList(_db.Client, "ClientId", "Type");
+      return View(thisSalon);
+    }
+
+    [HttpPost]
+    public ActionResult Update(Salon salon)
+    {
+      _db.Entry(salon).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisSalon = _db.Salon.FirstOrDefault(salon => salon.SalonId == id);
+      return View(thisSalon);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisSalon = _db.Salon.FirstOrDefault(salon => salon.SalonId == id);
+      _db.Salon.Remove(thisSalon);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
-
-
 
 // Use to implement a search field for the user to compare offerings
     // [HttpPost]
