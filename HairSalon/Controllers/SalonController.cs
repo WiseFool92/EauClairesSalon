@@ -21,6 +21,26 @@ namespace HairSalon.Controllers
       List<Salon> model = _db.Salon.ToList();
       return View("Index", model);
     }
+
+     public ActionResult Create()
+    {
+      ViewBag.ClientId = new SelectList(_db.Client, "ClientId", "Type");
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Salon salon)
+    {
+      _db.Salon.Add(salon);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      Salon thisSalon = _db.Salon.FirstOrDefault(salon => salon.SalonId == id);
+      return View("Details", thisSalon);
+    }
   }
 }
 
