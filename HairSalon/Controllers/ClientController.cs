@@ -17,8 +17,32 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
-      List<Client> model = _db.Clients.ToList();
+      List<Client> model = _db.Client.ToList();
       return View("Index", model);
+    }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    public ActionResult Create(Client client)
+    {
+      _db.Client.Add(client);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      Client thisClient = _db.Client.FirstOrDefault(Client => Client.ClientId == id);
+      return View("Details", thisClient);
+    }
+
+    public ActionResult Update (int id)
+    {
+      var thisClient = _db.Client.FirstOrDefault(Client => Client.ClientId == id);
+      return View("Update", thisClient)
     }
   }
 }
