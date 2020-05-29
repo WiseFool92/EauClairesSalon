@@ -9,7 +9,6 @@ namespace HairSalon.Models
     {
       this.Salon = new HashSet<Salon>();
     }
-
     public int ClientId { get; set; }
     public string Name { get; set; }
     public string Type { get; set; }
