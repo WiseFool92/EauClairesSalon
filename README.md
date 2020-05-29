@@ -71,6 +71,7 @@ dotnet test
 10. Right click on tables and select create table
 11. Your first collum name should be ClientId (make sure it is an int) & since this acts as your id key - check these three boxes: Primary Key, not null, & Auto Incrementing 
 12. Next we will add three collums Name, Type, Contact (make sure it is a string (varchar) set to 255)
+13. Tasks Complete
 
 ## Specs
 

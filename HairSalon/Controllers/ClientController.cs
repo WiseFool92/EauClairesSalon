@@ -26,6 +26,7 @@ namespace HairSalon.Controllers
       return View();
     }
 
+    [HttpPost]
     public ActionResult Create(Client client)
     {
       _db.Client.Add(client);
