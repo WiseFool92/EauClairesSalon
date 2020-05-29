@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace TableData.Models
+namespace HairSalon.Models
 {
   public class Client
   {

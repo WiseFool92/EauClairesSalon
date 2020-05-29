@@ -56,9 +56,18 @@ dotnet test
 ```
 13. Enjoy
 
-## ReCreating MySql Database
+## ReCreating MySql Database 
+(Setup my vary slightly from system to system)
 
-1. 
+1. Open MySql Community Installer and reconfigure (legacy password, uncheck windows services)
+2. Open MySql Workbench
+3. On the bar at the top of the page with many options click Create New Schema in the connected server (it looks like triple stacked silicone wafers)
+4. last_first (naming scheme)
+5. Open the drop down for the database created
+6. Right click and select create table
+7. Right Click and select alter table to add collumns etc..
+8. Your first collum acts as your id key - so check these three boxes: Primary Key, not null, & Auto Incrementing
+9. 
 
 ## Specs
 
@@ -66,11 +75,11 @@ dotnet test
 #### Hair Salon
 |                          Behavior                          | Input  | Output  |
 | :--------------------------------------------------------: | :----: | :-----: |
-| The program | '' | '' |
-| The program | '' | '' |
-| The program | '' | '' |
-| The program | '' | '' |
-| The program | '' | '' |
+| The user can view the list of styists | 'click view stylists' | 'List of stylists' |
+| The user can add a stylist to the hair salon | 'click add another stylist' 'Natural Hair Care Specialist' | 'Natural Hair Care Specialist' |
+| The user can add clients to each stylist | 'select karen' 'Add Amanda to her clientel' | 'Amanda' |
+| The user can add details to the stylist | 'Name, Type' | 'Betty' 'Colorist' |
+| The user can add details to the patron | 'Name, type of work' | 'Sally' 'Dye Hair Blue' |
 
 ---
 ## Known Bugs
