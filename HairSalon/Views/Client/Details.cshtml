@@ -9,4 +9,6 @@
 <h3>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)<h3><br>
 <h3>@Html.DisplayNameFor(model => model.Contact): @Html.DisplayFor(model => model.Contact)<h3><br>
 
-<p>@Html.ActionLink("Back to list", "Index", "Client")</p>
+<p>@Html.ActionLink("Update this Client", "Update", new { id = Model.ClientId })</p>
+<p>@Html.ActionLink("Delete this Client", "Delete", new { id = Model.ClientId })</p>
+<p>@Html.ActionLink("Add a Client", "Create")</p>
