@@ -7,6 +7,6 @@ namespace HairSalon.Models
     public DbSet<Salon> Salon { get; set; }
     public DbSet<Client> Client { get; set; }
 
-    public TableDataContext(DbContextOptions options) : base(options) { }
+    public SalonContext(DbContextOptions options) : base(options) { }
   }
 }
