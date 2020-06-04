@@ -47,6 +47,10 @@ UNLOCK TABLES;
 
 -- The Code for the utilized tables - Create statements
 
+-- CREATE DATABASE `nathan_watkinshoagland` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+-- USE `nathan_watkinshoaagland`;
+
 -- CREATE TABLE `salon` (
 --   `SalonId` int NOT NULL AUTO_INCREMENT,
 --   `StylistName` varchar(255) DEFAULT NULL,
