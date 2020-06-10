@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@using HairSalon.Models;
+@using System.Collections.Generic;
+@model List<HairSalon.Models.Client>;
+
+<h2>Search Results:</h2>
+
+<p>Clients</p>
+
+@if (Model.Count == 0)
+{
+  <p>No clients match</p>
+}
+@foreach(Client client in Model)
+{
+   <li>@Html.ActionLink($"{client.Name} {client.Contact}" , "Details", new {id = client.ClientId})</li>
+}

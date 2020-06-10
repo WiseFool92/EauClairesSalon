@@ -14,10 +14,10 @@
 
     @Html.LabelFor(model => model.Name)
     @Html.EditorFor(model => model.Name)
-    @Html.LabelFor(model => model.Type)
-    @Html.EditorFor(model => model.Type)
     @Html.LabelFor(model => model.Contact)
     @Html.EditorFor(model => model.Contact)
+    @Html.LabelFor(model => model.Stylist)
+    @Html.DropDownList("StylistId")
 
     <input type="submit" value="Save" class="btn"/>
 }

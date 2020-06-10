@@ -24,7 +24,7 @@ namespace HairSalon
     {
       services.AddMvc();
       services.AddEntityFrameworkMySql()
-        .AddDbContext<SalonContext>(options => options
+        .AddDbContext<StylistContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
     }
 
