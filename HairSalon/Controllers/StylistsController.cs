@@ -28,7 +28,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Create()
     {
-      return View("Create");
+      return View();
     }
 
     [HttpPost]
@@ -75,8 +75,8 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/stylistsearch")]
-    public ActionResult Stylistsearch(string searchStylist, string searchStylistParam)
+    [HttpGet("/search")]
+    public ActionResult StylistSearch(string searchStylist, string searchStylistParam)
     {
       var model = from search in _db.Stylists select search;
       List<Stylist> matchesStylist = new List<Stylist> { };
