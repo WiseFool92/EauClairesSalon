@@ -42,7 +42,7 @@ namespace HairSalon.Controllers
     public ActionResult Details(int id)
     {
       Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      thisStylist.Client = _db.Clients.Where(client => client.StylistId == id).ToList();
+      thisStylist.Clients = _db.Clients.Where(client => client.StylistId == id).ToList();
       return View("Details", thisStylist);
     }
 

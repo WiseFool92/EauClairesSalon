@@ -30,6 +30,8 @@ CREATE TABLE `clients` (
   `Name` varchar(255) DEFAULT NULL,
   `Contact` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ClientId`)
+  KEY `StylistId_idx` (`StylistId`),
+  CONSTRAINT `StylistId` FOREIGN KEY (`StylistId`) REFERENCES `stylists` (`StylistId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -106,3 +108,22 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-06-15 13:13:00
+
+
+CREATE DATABASE  IF NOT EXISTS `nathan_watkinshoagland`;
+USE `nathan_watkinshoagland`;
+
+CREATE TABLE `clients` (
+  `ClientId` int NOT NULL AUTO_INCREMENT,
+  `StylistId` int NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Contact` varchar(255) NOT NULL,
+  PRIMARY KEY (`ClientId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `stylists` (
+  `StylistId` int NOT NULL AUTO_INCREMENT,
+  `StylistName` varchar(255) NOT NULL,
+  `Specialty` varchar(255) NOT NULL,
+  PRIMARY KEY (`StylistId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
