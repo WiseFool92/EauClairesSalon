@@ -109,21 +109,20 @@ UNLOCK TABLES;
 
 -- Dump completed on 2020-06-15 13:13:00
 
-
 CREATE DATABASE  IF NOT EXISTS `nathan_watkinshoagland`;
 USE `nathan_watkinshoagland`;
 
 CREATE TABLE `clients` (
   `ClientId` int NOT NULL AUTO_INCREMENT,
-  `StylistId` int NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  `Contact` varchar(255) NOT NULL,
+  `StylistId` int NOT NULL DEFAULT '0',
+  `Name` varchar(255) DEFAULT NULL,
+  `Contact` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ClientId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `stylists` (
   `StylistId` int NOT NULL AUTO_INCREMENT,
-  `StylistName` varchar(255) NOT NULL,
-  `Specialty` varchar(255) NOT NULL,
+  `StylistName` varchar(255) DEFAULT NULL,
+  `Specialty` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`StylistId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
