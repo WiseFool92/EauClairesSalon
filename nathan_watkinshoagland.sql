@@ -26,12 +26,10 @@ DROP TABLE IF EXISTS `clients`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `clients` (
   `ClientId` int NOT NULL AUTO_INCREMENT,
-  `StylistId` int NOT NULL,
+  `StylistId` int NOT NULL DEFAULT '0',
   `Name` varchar(255) DEFAULT NULL,
   `Contact` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ClientId`)
-  KEY `StylistId_idx` (`StylistId`),
-  CONSTRAINT `StylistId` FOREIGN KEY (`StylistId`) REFERENCES `stylists` (`StylistId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
