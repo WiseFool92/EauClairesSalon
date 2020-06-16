@@ -37,16 +37,16 @@ namespace HairSalon.Controllers
 
     public ActionResult Details(int id)
     {
-      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-      thisClient.Stylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == thisClient.StylistId);
+      Client thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+      ViewBag.Stylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == thisClient.StylistId);
       return View("Details", thisClient);
     }
 
     public ActionResult Update(int id)
     {
-      var thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name", "Contact");
-      return View("Update", thisClient);
+      return View(thisClient);
     }
 
     [HttpPost]
@@ -54,19 +54,19 @@ namespace HairSalon.Controllers
     {
       _db.Entry(client).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index", new { id = client.ClientId });
+      return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
       return View(thisClient);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
       _db.Clients.Remove(thisClient);
       _db.SaveChanges();
       return RedirectToAction("Index");
