@@ -21,6 +21,7 @@ namespace HairSalon.Controllers
       List<Client> model = _db.Clients.Include(clients => clients.Stylist).ToList();
       return View(model);
     }
+
     public ActionResult Create()
     {
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name", "Contact");
@@ -32,7 +33,7 @@ namespace HairSalon.Controllers
     {
       _db.Clients.Add(client);
       _db.SaveChanges();
-      return RedirectToAction("Index"); // , new { id = client.StylistId }
+      return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
